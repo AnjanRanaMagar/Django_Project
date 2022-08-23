@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+
+  .design{
+    background-color:lightblue;
+    padding:2rem;
+    margin:2rem;
+    display:grid;
+    }
+
+  .heading{
+  background-color:lightgreen;
+  padding:2rem;
+  margin:1rem;
+  display:flex;
+  }
+
+  .tab{
+  background-color:grey;
+  display:grid;
+  }
+
+
+
+  </style>
+    <meta charset="UTF-8">
+    <title>School</title>
+</head>
+<body>
+<h1 class="heading">School Department</h1>
+  <div class="design">
+
+    <div class="tab">
+       <pre id="t1">
+        Id                                     Department_Name                                                           No of courses       No of teacher
+      </pre>
+<!--        <th>ID</th> <th class="tab1">FirstName</th> <th>LastName</th> <th>Roll Number</th> <th>Department Name</th>-->
+<!--        <th>Courses Name</th> <th>Semester Year</th>-->
+   </div>
+      <table border="1">
+        {% for x in school %}
+          <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.Department_Name }}</td>
+            <td>{{ x.No_of_courses }}</td>
+            <td>{{ x.Number_of_teacher }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+</body>
+</html>
