@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Student</title>
+</head>
+<body>
+  <h1>Update Department</h1>
+<!--  action attribute tells us where to send the data.-->
+  <form action="updaterecord_dp/{{ department.id }}" method="post">
+    {% csrf_token %}
+      Department Name: <br>
+      <input name="dp_name" value="{{ department.Department_Name }}">
+      <br><br>
+     Course Number: <br>
+      <input name="course_num" value="{{ department.No_of_courses }}">
+      <br><br>
+      Number of Teacher: <br>
+      <input name="teacher_num" value="{{ department.Number_of_teacher }}">
+      <br><br>
+
+      <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>
