@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+
+  .design{
+    background-color:lightblue;
+    display:grid;
+
+    }
+  .heading {
+  text-align:center;
+  margin:2rem;
+  background-color:powderblue;
+  display:flex;
+  }
+
+  .tab {
+  background-color:grey;
+  }
+
+  </style>
+    <meta charset="UTF-8">
+    <title>Student</title>
+</head>
+<body>
+<h1 style="text-align:center; background-color:grey; padding:1rem;">Student List</h1>
+  <div class="design">
+<!--    <div class="tab">-->
+<!--      <pre id="t1"> ID        FirstName                       LastName       Dob     Roll         Department_Name                  Courses_Name                   Semester_Year-->
+<!--      </pre>-->
+<!--&lt;!&ndash;        <th>ID</th> <th class="tab1">FirstName</th> <th>LastName</th> <th>Roll Number</th> <th>Department Name</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>Courses Name</th> <th>Semester Year</th>&ndash;&gt;-->
+
+<!--    </div>-->
+      <table border="1">
+          <tr>
+                <th>SN.</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Birth</th>
+                <th>Roll No.</th>
+                <th>Department Name</th>
+                <th>Course Name</th>
+                <th>Semester No.</th>
+                <th>isAdult</th>
+                <th>Delete</th>
+          </tr>
+        {% for x in student %}
+          <tr>
+            <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
+<!--            <td>{{ x.db_column }}</td>-->
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+            <td> {{ x.Dob }}</td>
+            <td>{{ x.Roll_Number }}</td>
+            <td>{{ x.Department_Name }}</td>
+            <td>{{ x.Courses_Name }}</td>
+            <td>{{ x.Semester_Number }}</td>
+            <td>{{ x.Age }}</td>
+            <td> <a href="delete/{{ x.id }}">Delete</a> </td>
+          </tr>
+        {% endfor %}
+      </table>
+    <p>
+      <a href="add/">Add Student</a>
+    </p>
+    </div>
+<h5> Created by - Anjan Rana Magar (gopalanjan)</h5>
+
+</body>
+</html>

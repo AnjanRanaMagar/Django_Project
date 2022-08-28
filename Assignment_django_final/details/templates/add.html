@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <style>
+        .error {
+        content: "*";
+        color:red;
+        }
+    </style>
+</head>
+<body>
+  <h1>Add Student</h1>
+<!--  action attribute tells us where to send the data.-->
+  <form action="addrecord/" method="post">
+    {% csrf_token %}
+      First Name: <br>
+      <input name="first">
+      <div class="error"> Required: * </div>
+      <br><br>
+     Last Name: <br>
+      <input name="last">
+      <br><br>
+     Roll No: <br>
+      <input name="roll">
+      <br><br>
+       DOB(Year_Only) : <br>
+      <input name="dob">
+      <br><br>
+      Department Name: <br>
+      <input name="dp">
+      <div class="error"> Required: * </div>
+      <br><br>
+      Courses Name: <br>
+      <input name="course">
+      <br><br>
+      Semester Number: <br>
+      <input name="semester_num">
+      <div class="error"> Required: * </div>
+      <br><br>
+      <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>
